@@ -1,0 +1,18 @@
+Maggie Zhao
+APCS2 pd01
+HW11-- Get On the Bus
+2018-02-28
+
+-- Brute Force Method --
+(will probably take a really really really really long time)
+
+
+Begin at upper left-hand corner.
+1. Place knight in the next available spot
+   (can be easily determined by drawing the L shape on the chessboard).
+2. Repeat step 1
+Continue until
+  a) All squares have been visited. (The Knight's Tour is done!)
+  b) You reach a square with no next available spots.
+      - go to the last spot visited by the knight and choose a different spot
+          (that is, the spot that does not have any more solutions)

@@ -1,0 +1,101 @@
+Maggie Zhao
+APCS2 pd01
+HW09- Yaaasss Queens
+2018-02-26
+
+=========v=========v=========v=========v=========v=========v=========v=========v
+-> 2x2
+This case is not solvable. After placing one queen down on a 2x2 chessboard, all
+other spots can be accessed by the queen, thus making it impossible to have
+2 queens on the board at the same time, that cannot attack each other.
+ _______
+| ♛ | X |
+| X | X |
+=========v=========v=========v=========v=========v=========v=========v=========v
+-> 3x3
+Like the 2x2 chessboard, this case is not solvable. After placing the first
+two queens in an "L" position (similar to that of a knight's move set)
+there is nowhere to place the last queen.
+ ___________
+| ♛ | X | X |    where X represents spots accessible by the first queen,
+| X | X | Y |    and Y represents any remaining spots that are accessible
+| X | ♛ | Y |    by the second queen.
+=========v=========v=========v=========v=========v=========v=========v=========v
+-> 4x4
+The 4x4 chessboard has 2 distinct solutions where all 4 queens can fit
+without killing another queen. This solution can be found by reflecting
+the queens over the middle of the board, or by moving each queen over by 1
+square while going around the board clockwise.
+ _______________            _______________
+| X | ♛ | X | X |          | X | X | ♛ | X |
+| X | X | X | ♛ |          | ♛ | X | X | X |
+| ♛ | X | X | X |          | X | X | X | ♛ |
+| X | X | ♛ | X |          | X | ♛ | X | X |
+=========v=========v=========v=========v=========v=========v=========v=========v
+-> 5x5
+Due to the odd symmetry of the board (and all other oddxodd boards), the
+5x5 has many more solutions to the problem. I found two different types, the Q
+shape, and the "rows". With the Q shape configuration, the 4 in a square has 2
+solutions, and rotating the entire board brings the total to 8. For the "row"
+configuration, it can be reflected across the y axis, or rotated by 90 degrees,
+bringing the total for that configuration to 8 as well. I found a total of 16,
+but there are almost definitely more configurations I didn't find.
+ ___________________               ___________________
+|   | ♛ |   |   |   |             | ♛ |   |   |   |   |
+|   |   |   | ♛ |   |             |   |   |   | ♛ |   |
+| ♛ |   |   |   |   |             |   | ♛ |   |   |   |
+|   |   | ♛ |   |   |             |   |   |   |   | ♛ |
+|   |   |   |   | ♛ |             |   |   | ♛ |   |   |
+=========v=========v=========v=========v=========v=========v=========v=========v
+-> 6x6
+Like the rest of the boards, each distinct solution yields 8 different versions
+of it through rotation and reflection. It is simply a matter of finding the
+different solutions. However, this one proved to be much more difficult than
+the 5x5 boards.
+ _______________________
+|   |   |   |   |   | ♛ |
+|   | ♛ |   |   |   |   |
+|   |   |   | ♛ |   |   |
+| ♛ |   |   |   |   |   |
+|   |   | ♛ |   |   |   |
+|   |   |   |   | ♛ |   |
+=========v=========v=========v=========v=========v=========v=========v=========v
+-> 7x7
+Like the rest of the boards, each distinct solution yields 8 different versions
+of it through rotation and reflection. It is simply a matter of finding the
+different solutions. The combinations on a 7x7 should theoretically
+be greater than the number of solutions on a 5x5 board, simply because there is
+a larger amount of space.
+ ___________________________
+|   | ♛ |   |   |   |   |   |
+|   |   |   |   |   | ♛ |   |
+|   |   | ♛ |   |   |   |   |
+|   |   |   |   |   |   | ♛ |
+|   |   |   | ♛ |   |   |   |
+|   |   |   |   |   |   |   |
+| ♛ |   |   |   | ♛ |   |   |
+=========v=========v=========v=========v=========v=========v=========v=========v
+-> 8x8
+Surprisingly enough, there are many solutions to this problem, although not
+many people discovered it in class. Like all the other boards with solutions,
+it can be reflected and rotated, so there are 8 solutions for each distinct
+combination. For me, trying random spots on the board proved to be more
+effective than following any type of method. One such combination is as follows:
+ _______________________________
+| ♛ |   |   |   |   |   |   |   |
+|   |   |   |   | ♛ |   |   |   |
+|   |   |   |   |   |   |   |  ♛|
+|   |   |   |   |   | ♛ |   |   |
+|   |   | ♛ |   |   |   |   |   |
+|   |   |   |   |   |   | ♛ |   |
+|   | ♛ |   |   |   |   |   |   |
+|   |   |   | ♛ |   |   |   |   |
+ _______________________________
+|   |   |   |   |   |   | ♛ |   |
+|   |   |   |   | ♛ |   |   |   |
+|   |   | ♛ |   |   |   |   |   |
+| ♛ |   |   |   |   |   |   |   |
+|   |   |   |   |   | ♛ |   |   |
+|   |   |   |   |   |   |   | ♛ |
+|   | ♛ |   |   |   |   |   |   |
+|   |   |   | ♛ |   |   |   |   |

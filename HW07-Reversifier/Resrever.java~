@@ -1,0 +1,36 @@
+// Maggie Zhao
+// APCS2 pd01
+// HW07-- A Man, A Plan, A Canal: Panama!
+// 2018-02-13
+
+
+public class Resrever {
+
+    public static final String ALPHABET = "abcdefghijklmnopqrstuvwxyz";
+
+    // helper function to create strings
+    public static String makeString (int length) {
+	String str = "";
+	for (int i = 0; i < length; i++ ) {
+	    int randLetter = (int) (Math.random() * 26) ;
+	    str = str + ALPHABET.substring(randLetter, randLetter + 1);
+	}
+    }
+
+    
+    public static String reverseA (String input) {
+	String str  = "";
+	for (int x = input.length() - 1; x >= 0; x --)
+	    str = str + input.substring(x);
+	return str;
+    }
+
+    public static String reverseB (String input) {
+	if (input.length() == 1)
+	    return input;
+	else
+	    return input.substring(input.length() / 2) + input.substring(0, input.length()/2 ) ;
+    }
+
+
+}
