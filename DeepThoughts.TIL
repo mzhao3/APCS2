@@ -1,0 +1,51 @@
+
+// SparklyPops- Maggie Zhao, Lily Yan, Sophia Xia
+// APCS2 pd01
+// HW14-- Probing the Depths
+// 2018-03-05
+
+
+ Mean execution times for boards of size n*n:
+  n=5   .1099s over 10 executions
+  n=6   16.6s  over 10 executions
+  n=7   107.922s over 6 executions
+  n=8   0.362s  over 10 executions (with fixed starting location)
+
+Section Uno:
+Q1: From any starting position, can an open tour always be found? Explain.
+No, an open tour cannot always be found from any starting position. For example, in a 5x5 board, there is no solution if you start from (0,1).
+Q2: Same, but for closed tour.
+Since there is not always a solution for a solution for a board, and a closed tour is more difficult to achieve than an open tour, a closed tour cannot always be generated from a given starting position.
+Q3: How do you explain the increase in execution time as n increases?
+As n increases, the number of spaces the knight needs to traverse on the board also increases. For (almost) each square, the knight has 8 possible moves it can make. So as the size of the board increases, the more spots the knight will have to check, thus increasing the execution time significantly.
+Q4: Thoughts on optimization?
+The Knight's Tour algo could be optimized if we could used heurestics (looking two steps ahead) to see if a certain path is worth continuing. This way, not as much time is expended for the knight to backtrack to
+
+
+Section Deux:
+State your cleanest algo for finding your way out of the maze.
+(Mazerunner will have a bias towards a certain direction. Forward refers to that certain direction.)
+1. Start from the entrance to the maze (@).
+2. Check for possible moves around the current step.
+    a. If there
+3. If there is a split, record the location of the split and choose one direction to continue on.
+4. Move forward by 1 step.
+5. Repeat steps 2 and 3 until
+    a. If you have reached a dead end, return to the last split, and choose the next possible direction.
+    b. You have reached the exit.
+6. Leave through the exit.
+Pseudocode:
+method findExit(spot) {
+  if (isExit)
+    exit the program
+  if (isMoves) {
+      if (isSplit) {
+          set lastSplit
+          choose direction
+          }
+      move forward 1
+      findExit(nextSpot)
+  else {
+    findExit(lastSplit)
+    }
+  }
