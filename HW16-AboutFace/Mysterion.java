@@ -3,6 +3,22 @@
 // HW16-- About Face
 // 2018-03-07
 
+/***
+ * class Mysterion
+ * pseudocode expression of algo:
+ * ------------------------------
+ * fxn mysterion(arr,a,b,c) {
+ *     v = arr[c]
+ *     swap arr[c], arr[b]  
+ *     s = a
+ *     for i in [a..b-1]
+ *         if arr[i] < v
+ *             swap arr[s], arr[i]
+ *             s+=1
+ *     swap arr[b], arr[s] 
+ *     return s
+ **/
+
 public class Mysterion {
   /** I honestly could not find out what Mysterion did. All of the theories we developed today did not work.
     * The idea that Mysterion reversed an array that was sorted in descending order is disproved in my third test case.
@@ -14,8 +30,8 @@ public class Mysterion {
     swap(arr, b, c);
 
     int s = a;
-    for (int i = a; i < (b - 1); i++) {
-      if (arr[i] < v) {
+    for (int i = a; i < b; i++) {
+      if (arr[i] <= v) {
         swap (arr, s, i);
         s++;
       }
@@ -47,8 +63,16 @@ public class Mysterion {
     int[] arr2 = {8,11,10,4,12};
     int[] arr3 = {9,8,7,6,5,4,3,2,};
 
-    System.out.println("Testing arr1: [7,1,5,12,3]");
-    System.out.println(mysterion(arr1, 0,4,2)); // [1,3,5,12,7] & 2
+    for( int testC = 0; testC < 5; testC++ ) {
+	    System.out.println("arr1: ");
+	    System.out.println(toString(arr1));
+	    mysterion(arr1,0,4,testC);
+	    System.out.println("after mysterion w/ a=0,b=4,c=" 
+                         + testC +"...");
+	    System.out.println(toString((arr1));
+	    System.out.println("-----------------------");
+
+    
     System.out.println(mysterion(arr1, 4,0,2)); // [7,3,1,12,5] & 2
     System.out.println(mysterion(arr1, 2,0,4)); // [1,3,5,12,7] & 2
 
