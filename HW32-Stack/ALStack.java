@@ -4,12 +4,9 @@
 // 2018-04-11r
 
 import java.util.ArrayList;
-
 public class ALStack<PANCAKE> implements Stack<PANCAKE> {
-
   private ArrayList<PANCAKE> _stack;
   private int _stackSize;
-
   public ALStack() {
     _stack  = new ArrayList<PANCAKE>();
     _stackSize = 0;
@@ -18,7 +15,6 @@ public class ALStack<PANCAKE> implements Stack<PANCAKE> {
   public boolean isEmpty() {
     return (_stackSize == 0);
   }
-
   //Return top element of stack without popping it.
   public PANCAKE peek(){
     return _stack.get(_stackSize - 1);
