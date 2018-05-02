@@ -1,0 +1,26 @@
+// Maggie Zhao
+// APCS2 pd01
+// HW41-- A Tree Grows in 251 
+// 2018-04-30 m
+
+When traversals are made, the elements/branches of the tree are divided in this way:
+InOrder traversals: left - root - right
+PreOrder traversals: root - left - right
+PostOrder traversals: left - right - root
+
+Prerequisite info: any inOrder traversal & any other traversal
+( a preOrder and postOrder traversal cannot uniquely identify a tree )
+
+For inOrder and preOrder:
+1) Identify the root of the tree ( the leftmost element in the preOrder traversal ).
+2) Separate the left and right branches of the tree ( elements to the left and right of the root in the InOrder traversal ).
+3) Locate the left and right branches in the preOrder traversal. Repeat steps 1 - 3 on each branch until there is only one element on the left and right branch.
+
+
+For inOrder and postOrder:
+1) Identify the root of the tree ( the rightmost element in the postOrder traversal ).
+2) Separate the left and right branches of the tree ( elements to the left and right of the root in the InOrder traversal ).
+3) Locate the left and right branches in the postOrder traversal. Repeat steps 1 - 3 on each branch until there is only one element on the left and right branch. 
+
+
+
