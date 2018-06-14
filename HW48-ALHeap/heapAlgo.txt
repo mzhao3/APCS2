@@ -1,0 +1,23 @@
+Summer - Maggie Zhao, Richard Wong, Kerwin Chen
+APCS2 pd01
+HW48-- Heap o’Trouble
+2018-05-13
+
+Adding to a heap:
+
+Precondition: Empty heap or min heap
+
+1. If empty, inserted value will be the root. Else, place new node in the bottom left, as far left as possible. (i.e. If heap is not perfect, make inserted value a leaf node at the left-most empty spot. If preexisting heap is perfect, start a new level, with the inserted value as the first leaf. )
+2. In the subtree with the new node, compare the node’s value with the parent’s value. 
+	a. If the node is smaller than the parent, swap the two (so that the smaller value is the parent).
+3. Repeat step 2 until you can no longer swap, or the inserted node is the root.
+
+
+Removing from a heap:
+
+Precondition: min heap
+
+1. Swap node you want to remove with the rightmost node of the bottom level of the heap. Remove this node (which should now be on the bottom right) by making it null. 
+2. In the subtree where the replaced node is the root, compare the node to of it’s children nodes.
+	a. If the node is larger than both of it’s children / it’s child, swap with the smaller of the two.
+3. Repeat step 2 until you can no longer swap, or the replaced node is a leaf.
